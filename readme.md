@@ -379,7 +379,7 @@ According to the hourly average values of sensor readings the maximum temperatur
 
 ### Correlation
 
-![Figure](outputs/plots/1.2 correlation matrix.png)
+![Figure](outputs/plots/1.2_correlation_matrix.png)
 
 These results confirm the independence of temperature, humidity, and light in the monitored environment over the measured period.
 
