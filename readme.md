@@ -48,6 +48,16 @@ All generated outputs (CSVs, plots, text report) are stored under:
 - Correlation between temperature, humidity, and light  
   ![1.1 Correlation heatmap](outputs/plots/1.1_correlation_heatmap.png)
 
+### Findings & Interpretation – Task 1.1
+
+The time-series plots show that temperature and humidity remain within narrow ranges throughout the week, which suggests a **controlled indoor environment**. Temperature stays roughly between 22–24°C, while humidity stays around 48–52%, without clear warming or cooling trends.
+
+Light intensity remains in the range of a few hundred lux and never approaches levels typical of direct sunlight (often above 20,000 lux). This indicates that illumination is dominated by **artificial indoor lighting**, not natural day–night cycles. Occasional peaks are more likely reflections or brief changes in indoor usage rather than real sunlight.
+
+The scatter plots of temperature vs humidity look random, with no visible pattern. The correlation heatmap confirms that temperature, humidity, and light have **no meaningful linear relationship** in this dataset. In other words, humidity does not affect temperature, and temperature does not affect humidity in this setting. This is consistent with separate, regulated controls (e.g. HVAC) and a stable indoor space.
+
+Overall, Task 1.1 shows a highly stable environment with independent sensor behaviour and no strong natural environmental transitions.
+
 ---
 
 ## Task 1.2 – Day vs Night comparisons
@@ -59,6 +69,12 @@ Day/night labels are based on time (06:00–18:00 = day, otherwise night).
 
 - Humidity – Day vs Night  
   ![1.2 Humidity Day vs Night](outputs/plots/1.2_humidity_day_night_box.png)
+
+### Findings & Interpretation – Task 1.2
+
+The day–night separation is done by clock time, but the light readings show that illumination is artificial and remains relatively constant. This means that the “day vs night” labels do not represent true exposure to sunlight.
+
+The boxplots for temperature and humidity show nearly identical distributions for both day and night. There is no noticeable cooling at night or heating during the day. This supports the conclusion that the environment is **fully controlled**, with indoor HVAC and artificial lighting maintaining consistent conditions, regardless of the time of day.
 
 ---
 
@@ -87,6 +103,14 @@ Hourly mean/min/max statistics are saved in:
 
 - Temperature, Humidity, Light – hourly mean/min/max in one figure  
   ![1.3 All sensors hourly mean/min/max](outputs/plots/1.3_all_sensors_hourly_mean_min_max.png)
+
+### Findings & Interpretation – Task 1.3
+
+Aggregating the 5-second sensor readings into hourly mean, minimum, and maximum values helps reduce noise and highlight broader patterns. The hourly plots show that temperature and humidity vary only slightly from hour to hour, which confirms that the environment is kept within tight limits.
+
+Light intensity shows modest fluctuations but remains within a range consistent with artificial lighting. There is no sharp spike pattern that would correspond to sunrise or sunset.
+
+The combined hourly plot clearly illustrates that none of the sensors exhibit strong daily rhythms. The system behaves as a **steady, controlled indoor space**, which is ideal for repeatable monitoring or experimentation.
 
 ---
 
@@ -169,6 +193,14 @@ Daily peak hours (based on hourly means) are stored in:
 - All days combined  
   ![1.4 Light hourly max – all days](outputs/plots/1.4_light_hourly_max_all_days.png)
 
+### Findings & Interpretation – Task 1.4
+
+Daily peak analysis shows that the hottest, most humid, and brightest hours move slightly from day to day, but always within a narrow range. These small shifts are typical of indoor environments where conditions are generally stable but can vary a bit due to normal usage, HVAC cycling, or sensor noise.
+
+The light peaks are clearly not driven by sunrise or sunset. Their magnitudes and timings are more consistent with artificial lighting schedules and occasional reflections or activity-related changes.
+
+Temperature and humidity peaks do not indicate any extreme events. They remain within comfortable, controlled ranges, confirming that the space is stable with minor fluctuations linked to everyday indoor behaviour rather than external weather.
+
 ---
 
 ## Task 1.5 – Daily mean temperature, humidity, and light
@@ -188,151 +220,15 @@ Plots of daily means:
 - Daily mean light intensity  
   ![1.5 Daily mean light](outputs/plots/1.5_daily_mean_light.png)
 
----
+### Findings & Interpretation – Task 1.5
 
-<!-- MSc IoT & Big Data – First Assignment README -->
+Daily averages remain very consistent across the week. The differences between the hottest, most humid, and brightest days are small and well within what is expected for a controlled room.
 
-# MSc IoT & Big Data – First Assignment
+This confirms three main points:
 
-This repository contains an analysis of 7 days of sensor data (5-second interval) for **temperature**, **humidity**, and **light**.  
-The main script is:
-
-- [`iot_analysis_first_assignment.py`](iot_analysis_first_assignment.py)
-
-All outputs are stored in:
-
-- [`outputs/`](outputs/)
-  - [`outputs/plots/`](outputs/plots/)
-  - `iot_descriptive_stats.csv`
-  - `iot_hourly_stats.csv`
-  - `iot_daily_peak_hours.csv`
-  - `iot_daily_summary.csv`
-  - `iot_enriched_features_and_anomalies.csv`
-  - `iot_story_report.txt`
-
----
-
-# ## Task 1.1 – Time-series plots and correlation
-
-### 1.1.1 Time-series with night shading
-- Temperature  
-  ![1.1 Temperature timeseries](outputs/plots/1.1_temperature_timeseries.png)
-- Humidity  
-  ![1.1 Humidity timeseries](outputs/plots/1.1_humidity_timeseries.png)
-- Light  
-  ![1.1 Light timeseries](outputs/plots/1.1_light_timeseries.png)
-
-### 1.1.2 Temperature & Humidity relationship
-- Scatter plot  
-  ![1.1 Temperature vs Humidity scatter](outputs/plots/1.1_temperature_vs_humidity_scatter.png)
-- Scatter proof  
-  ![1.1 Temperature vs Humidity scatter proof](outputs/plots/1.1_temperature_vs_humidity_scatter_proof.png)
-- Week-long dual time-series  
-  ![1.1 Temperature & Humidity timeseries proof](outputs/plots/1.1_temperature_humidity_timeseries_proof.png)
-
-### 1.1.3 Correlation heatmap
-- Correlation matrix  
-  ![1.1 Correlation heatmap](outputs/plots/1.1_correlation_heatmap.png)
-
----
-
-## **Findings & Interpretation – Task 1.1**
-
-The time-series plots show that temperature and humidity remain stable throughout all days, indicating a **controlled indoor environment**. Temperature stays around 22–24°C, while humidity stays close to 48–52%. The values do not display natural heating or cooling cycles.
-
-Light intensity ranges between roughly 450–850 lux, which is consistent with **artificial indoor lighting**. Natural sunlight would typically exceed 20,000 lux, so the sensor readings confirm that illumination does not depend on actual day or night. Minor peaks may occur from reflections or momentary increases in indoor activity.
-
-The temperature–humidity scatter plots show no recognisable pattern, and the correlation matrix confirms **no measurable relationship** between temperature, humidity, and light. This is expected in an indoor system where environmental controls maintain separate conditions.
-
-Overall, the week-long behaviour demonstrates a stable, enclosed environment with sensor independence and no strong environmental transitions.
-
----
-
-# ## Task 1.2 – Day vs Night comparisons
-
-- Temperature  
-  ![1.2 Temperature Day vs Night](outputs/plots/1.2_temperature_day_night_box.png)
-
-- Humidity  
-  ![1.2 Humidity Day vs Night](outputs/plots/1.2_humidity_day_night_box.png)
-
----
-
-## **Findings & Interpretation – Task 1.2**
-
-Day/night labels are based on time only, not light. Since lighting remains artificial and stable, the day–night classification does not reflect real environmental changes. The boxplots show nearly identical distributions for both temperature and humidity, supporting the conclusion that the environment is **not influenced by natural daylight** and remains regulated throughout the entire period.
-
----
-
-# ## Task 1.3 – Descriptive and hourly statistics
-
-- [`iot_descriptive_stats.csv`](outputs/iot_descriptive_stats.csv)
-- [`iot_hourly_stats.csv`](outputs/iot_hourly_stats.csv)
-
-### Hourly mean/min/max
-- Temperature  
-  ![1.3 Temperature hourly mean/min/max](outputs/plots/1.3_temperature_hourly_mean_min_max.png)
-- Humidity  
-  ![1.3 Humidity hourly mean/min/max](outputs/plots/1.3_humidity_hourly_mean_min_max.png)
-- Light  
-  ![1.3 Light hourly mean/min/max](outputs/plots/1.3_light_hourly_mean_min_max.png)
-
-### Combined hourly view  
-![1.3 All sensors hourly mean/min/max](outputs/plots/1.3_all_sensors_hourly_mean_min_max.png)
-
----
-
-## **Findings & Interpretation – Task 1.3**
-
-Hourly aggregation smooths the rapid 5-second readings and highlights general patterns. Temperature and humidity show very small hourly variations, reinforcing the presence of consistent HVAC controls. Light intensity also fluctuates within a narrow range, confirming that illumination is primarily artificial.
-
-The combined view shows that none of the sensors exhibit strong hourly cycles. The environment maintains steady conditions suitable for indoor monitoring or controlled experiments.
-
----
-
-# ## Task 1.4 – Daily peak hours
-
-- [`iot_daily_peak_hours.csv`](outputs/iot_daily_peak_hours.csv)
-
-### Summary plots
-- Hottest hours  
-  ![1.4 Daily hottest hours – temperature](outputs/plots/1.4_daily_hottest_hours_temperature.png)
-- Most humid hours  
-  ![1.4 Daily most humid hours](outputs/plots/1.4_daily_most_humid_hours.png)
-- Brightest hours  
-  ![1.4 Daily brightest hours](outputs/plots/1.4_daily_brightest_hours.png)
-
-### Hourly maxima per day (temperature, humidity, light)
-*(All images included exactly as generated)*
-
----
-
-## **Findings & Interpretation – Task 1.4**
-
-Daily peak analysis shows only small variations from day to day. These differences come from small indoor activities, HVAC adjustments, or normal sensor noise—not external conditions. Light peaks are entirely related to artificial lighting, which does not follow real sunlight patterns.
-
-Temperature and humidity peaks drift slightly between days but remain within narrow, controlled ranges. This confirms environmental stability with minor fluctuations consistent with indoor activity rather than natural cycles.
-
----
-
-# ## Task 1.5 – Daily mean temperature, humidity, and light
-
-- [`iot_daily_summary.csv`](outputs/iot_daily_summary.csv)
-
-- Daily mean temperature  
-  ![1.5 Daily mean temperature](outputs/plots/1.5_daily_mean_temperature.png)
-
-- Daily mean humidity  
-  ![1.5 Daily mean humidity](outputs/plots/1.5_daily_mean_humidity.png)
-
-- Daily mean light  
-  ![1.5 Daily mean light](outputs/plots/1.5_daily_mean_light.png)
-
----
-
-## **Findings & Interpretation – Task 1.5**
-
-Daily averages remain uniform from one day to the next. The most humid, brightest, and warmest days differ only slightly, and these changes are small enough to reflect normal indoor behaviour. The consistent daily means confirm the reliability of the week-long sensor data and support the observation that the environment is stable and controlled.
+1. The sensor data is reliable over the entire week.  
+2. The environment is **stable**, with no large day-to-day shifts.  
+3. Any small differences in daily means are due to normal indoor usage rather than external conditions.
 
 ---
 
@@ -424,26 +320,18 @@ Weekly overview:
 - 2025-03-07  
   ![2.1 Humidity ROC 2025-03-07](outputs/plots/2.1_humidity_roc_2025-03-07.png)
 
+### Findings & Interpretation – Task 2.1 (Moving Average & Rate of Change)
 
----
+The 10-minute moving average smooths the raw 5-second readings and reveals the underlying trend of each sensor. Temperature and humidity moving averages remain almost flat with small oscillations, which confirms long-term stability in the environment and supports the idea of a controlled indoor space.
 
-## **Findings & Interpretation – Task 2.1 (Moving Average & Rate of Change)**
+The weekly MA plots show no gradual warming or cooling over the week. The day-by-day MA plots also look similar, meaning each day behaves almost the same as the previous one. Light moving averages stay in the expected range for artificial lighting, reinforcing that illumination is not driven by natural daylight.
 
-The 10-minute moving average smooths the rapid 5-second fluctuations and reveals the underlying behaviour of each sensor. Temperature and humidity show stable moving-average lines with very small oscillations, confirming that the environment is controlled and not influenced by external weather or natural day/night cycles.
+The rate-of-change (ROC) plots show frequent small spikes in both directions. These spikes arise mainly from high-frequency noise and very short-term disturbances. ROC values fluctuate around zero, which indicates that there are no extended periods of continuous warming, cooling, humidifying, or drying.
 
-The week-long MA plots show that temperature stays almost flat, while humidity remains within a narrow band. Light intensity also forms a stable moving-average curve, consistent with artificial indoor lighting.
-
-The day-by-day MA plots reinforce the same behaviour: every single day follows almost the same pattern, with no rising or falling trend. This means the room conditions remain steady regardless of the day.
-
-The rate-of-change (ROC) plots show short spikes in both positive and negative directions. These do not represent real environmental changes—they come from natural sensor noise at 5-second sampling intervals and momentary events like movement, small vibrations, or quick changes in the monitored space.
-
-ROC for both sensors stays centered around zero most of the time, which indicates that no sustained warming, cooling, humidifying, or drying took place. Instead, the ROC confirms a **high-resolution sensor in a static environment**.
-
-Overall, Task 2.1 shows that:
-- the moving average reveals long-term stability,  
-- the ROC highlights high-frequency noise,  
-- each day looks similar to the next, and  
-- the entire environment stays consistent across the whole week.
+Taken together, the MA and ROC analysis demonstrates that:
+- the environment is stable over both short and long time scales,  
+- most of the “movement” in the ROC is noise at 5-second resolution, and  
+- each day’s behaviour closely matches the others.
 
 ---
 
@@ -460,11 +348,8 @@ Anomalies are detected using a 3σ rule on a 10-minute rolling mean and standard
 - Light anomalies  
   ![2.2 Light anomalies](outputs/plots/2.2_light_anomalies.png)
 
----
+### Findings & Interpretation – Task 2.2
 
-## **Findings & Interpretation – Task 2.2**
+The ±3σ anomaly detection flags isolated spikes that deviate from the rolling mean. These anomalies are short-lived and do not form long continuous segments. They most likely represent momentary sensor noise, quick activity near the sensors, or short disturbances such as doors opening or lights being switched.
 
-The ±3σ window identifies occasional short-lived spikes. These anomalies appear as isolated points and do not form sustained periods of abnormal behaviour. They come from momentary fluctuations such as sensor noise, quick human activity, or brief environmental disturbances.
-
-Because the rolling mean remains extremely stable and anomalies do not cluster into long-duration events, the environment is confirmed to be consistent and well-regulated throughout the week.
-
+Because the overall moving averages stay steady and anomalies do not persist, the environment remains consistent and well regulated. The anomaly detection mainly highlights brief, localised events rather than any major change in the underlying conditions.
