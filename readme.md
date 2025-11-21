@@ -470,7 +470,7 @@ Generally, these plots tell us that in a controlled environment, temperature rem
 
 ![Figure](outputs/plots/2.1_Daily_average_temerature_over_time.png)
 ![Figure](outputs/plots/2.1_Daily_average_humidity_versus_time.png)
-![Figure](outputs/plots/2.1 Daily_average_light_over_time.png)
+![Figure](outputs/plots/2.1_Daily_average_light_over_time.png)
 
 All parameters exhibit small, gradual changes over the week, with no sudden dramatic shifts. Temperature and humidity generally remain stable with minor daily variation, suggesting effective environmental control likely in an indoor or regulated space. However, light intensity has more pronounced daily swings compared to the other parameters, particularly the sharp peak on March 5, possibly due to external events or changes in lighting habits.
 
