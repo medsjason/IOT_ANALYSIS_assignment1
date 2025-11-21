@@ -406,7 +406,6 @@ The plot provides strong visual confirmation of a lack of any statistically sign
 [`outputs/mis_1.csv`](outputs/mis_1.csv)
 
 
-![Figure](outputs/plots/file.png)
 
 The maximum light intensity value reached is approximately 999.96 units at 14:09:20 and the minimum value is around 100.04 at 02:25:45.
 
