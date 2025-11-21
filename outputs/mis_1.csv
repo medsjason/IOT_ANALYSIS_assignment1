@@ -1,0 +1,4 @@
+                        Mean                      Minimum         Maximum          Variance  ,MEAN,MIN,MAX,VARIANCE
+temperature,22.501906,20.0,25.0,2.076787
+humidity,49.969108,40.0,60.0,33.190824
+light,549.860495,100.04,999.96,67778.124362
