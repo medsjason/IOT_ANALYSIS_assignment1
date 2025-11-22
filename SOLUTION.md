@@ -366,8 +366,8 @@ Because the overall moving averages stay steady and anomalies do not persist, th
 ### Patterns and trends
 
  ![1.1 Minute average](outputs/plots/1.1_Minute_average_temerature_versus_time.png)
-[Figure](outputs/plots/1.1_Minute_average_humidty_versus_time.png)
-[Figure](outputs/plots/1.1_minute_average_light_versus_time.png)
+[1.1 humidity average](outputs/plots/1.1_Minute_average_humidty_versus_time.png)
+[1.1 light average](outputs/plots/1.1_minute_average_light_versus_time.png)
 
 Since the variation of sensor readings is changed every 5 seconds, it is difficult to understand and plot the trend of temperature, humidity and light intensity over time within that frequency. So, I have decided to plot and understand the minute average values of sensor readings to decrease the frequency of variations. According to the above plot the maximum average minute temperature was 23.8 ℃ recorded at 16:20:00 and the minimum minute average temperature was approximately 20.2 ℃ at 18:36:00. However, the maximum temperature throughout the day is 25 ℃ recorded at 00:36:00 and the minimum value of temperature was 20 ℃ at 00:14:25, which means both the maximum and minimum temperatures are recorded at midnight. In addition to this the maximum and minimum minute average humidity are recorded at 21:31:00 and 22:50:00 respectively. Furthermore, the maximum and minimum minute average light intensity values were also recorded at 07:59:00 and 08:11:00 respectively. Generally, the above graph tells us there is a huge fluctuation of temperature, humidity and light intensity readings over time which may be caused by external factors such as artificial light, sensor fault or dynamic weather environmental conditions.
 
@@ -387,7 +387,10 @@ None of the sensor readings are strongly influenced or linearly dependent on the
 
 ### Relationship between temperature and humidity
 
-![Figure](outputs/plots/1.2_day_and_night_cycle.png)
+![Figure](outputs/plots/1.2.1_Day_and_night_cycle_Copy.png)
+![Figure](outputs/plots/1.2.1_Day_and_night_hourly_llight_intensity.png)
+![Figure](outputs/plots/1.2.1_Day_and_night_hourly_average_temerature.png)
+![Figure](outputs/plots/1.2.1_Day_and_night_hourly_average_humidity_Copy.png)
 ![Figure](outputs/plots/1.2_Relationship_between_temerature_and_humidity.png)
 
 In practical terms, this plot demonstrates that within the measured range, temperature fluctuations did not cause humidity to rise or fall, and vice versa. This supports the idea that the environment is well-controlled or that external influences on humidity and temperature act independently.
